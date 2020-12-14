@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v2d
       - uses: papeloto/action-zip@v1
         with:
-          files: *
+          files: /*
+          recursive: true
           dest: result.zip
       - uses: actions/upload-artifact@v1
         with:
