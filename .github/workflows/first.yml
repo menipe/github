@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  jobs:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step one
+    - name: Step two
+
+  Job2:
+    name: Second job
+    runs-on: windows-latest
+    steps:
+    - name: Step one
+    - name: Step two
