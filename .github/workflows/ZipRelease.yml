@@ -23,6 +23,18 @@ jobs:
         # Tool to use for archiving (zip / tar)
         type: 'zip'
 
+    - name: easy zip
+      uses: papeloto/action-zip@v1
+      with:
+        files: dist/ manifest.json
+        dest: mt-result.zip
+        recursive: true
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: my-artifact
+        path: ${{ github.workspace }}/mt-result.zip
+
 #    - uses: actions/checkout@v2
 
 #    - uses: actions/download-artifact@v2
