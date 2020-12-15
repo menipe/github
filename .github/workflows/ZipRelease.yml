@@ -12,10 +12,16 @@ jobs:
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
+        # Filename for archive
         filename: 'mt.zip'
+        # Base path for archive files
+        path: .
+        # Working directory before zipping
+        directory: .
+        # List of excluded files / directories
         exclusions: '*.git* /*node_modules/* .editorconfig'
+        # Tool to use for archiving (zip / tar)
         type: 'zip'
-#        path: 'mt/'
 
 #    - uses: actions/checkout@v2
 
