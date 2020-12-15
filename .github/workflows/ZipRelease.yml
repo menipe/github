@@ -9,38 +9,17 @@ jobs:
     - name: Display structure of downloaded files
       run: ls -R        
 
-    - name: Archive Release
-      uses: thedoctor0/zip-release@master
-      with:
-        # Filename for archive
-        filename: 'mt.zip'
-        # Base path for archive files
-        path: .
-        # Working directory before zipping
-        directory: .
-        # List of excluded files / directories
-        exclusions: '*.git* /*node_modules/* .editorconfig'
-        # Tool to use for archiving (zip / tar)
-        type: 'zip'
-
     - name: easy zip
       uses: papeloto/action-zip@v1
       with:
-        files: dist/ manifest.json
-        dest: mt-result.zip
+        files: README.md
+        dest: mt.zip
         recursive: true
 
     - uses: actions/upload-artifact@v1
       with:
-        name: my-artifact
-        path: ${{ github.workspace }}/mt-result.zip
-
-#    - uses: actions/checkout@v2
-
-#    - uses: actions/download-artifact@v2
-#      with:
-#        name: release.zip
-#        path: output
+        name: mt
+        path: ${{ github.workspace }}/mt.zip
 
     - name: Display structure of downloaded files
       run: ls -R        
