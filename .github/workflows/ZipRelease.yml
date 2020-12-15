@@ -11,3 +11,12 @@ jobs:
         filename: 'release.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
         type: 'zip'
+
+    - uses: actions/checkout@v2
+
+    - uses: actions/download-artifact@v2
+      with:
+        name: 'release.zip'
+
+    - name: Display structure of downloaded files
+      run: ls -R        
