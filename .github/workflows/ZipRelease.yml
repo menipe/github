@@ -5,13 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+
+    - name: Display structure of downloaded files
+      run: ls -R        
+
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
         filename: 'mt.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
         type: 'zip'
-        path: 'mt/'
+#        path: 'mt/'
 
 #    - uses: actions/checkout@v2
 
